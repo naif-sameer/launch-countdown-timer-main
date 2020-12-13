@@ -49,6 +49,7 @@ body {
   font-weight: 700;
   border-radius: 8px;
   position: relative;
+  box-shadow: 0 5px darken($primary-color, 5%);
 
   &::after,
   &::before {

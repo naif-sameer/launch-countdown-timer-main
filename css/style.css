@@ -34,7 +34,8 @@ body {
   font-size: 2.6em;
   font-weight: 700;
   border-radius: 8px;
-  position: relative; }
+  position: relative;
+  box-shadow: 0 5px #13141b; }
   .date__item::after, .date__item::before {
     content: " ";
     width: 8px;
