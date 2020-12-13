@@ -1,0 +1,253 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// colors
+$primary-color: hsl(235, 16%, 14%);
+$second-color: hsl(236, 21%, 26%);
+$primary-text-color: hsl(0, 0%, 100%);
+$second-text-color: hsl(345, 95%, 68%);
+$third-text-color: hsl(237, 18%, 59%);
+
+body {
+  margin: 0;
+  background-color: $primary-color;
+  background-image: url("../images/bg-stars.svg");
+  background-size: cover;
+  font-size: 14px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.container {
+  margin-top: 20px;
+  padding: 50px 20px;
+  text-align: center;
+
+  h1 {
+    color: $primary-text-color;
+    font-size: 2.4em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+}
+
+.date-container {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.date__item {
+  padding: 10px 8px;
+  background-color: $second-color;
+  color: $second-text-color;
+  font-size: 2.6em;
+  font-weight: 700;
+  border-radius: 8px;
+  position: relative;
+
+  &::after,
+  &::before {
+    content: " ";
+    $item-size: 8px;
+    width: $item-size;
+    height: $item-size;
+    background-color: $primary-color;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  $shape-position: -5px;
+  &::before {
+    left: $shape-position;
+  }
+
+  &::after {
+    right: $shape-position;
+  }
+}
+
+.date__item-title {
+  margin-top: 5px;
+  font-size: 0.8em;
+  font-weight: 400;
+  color: $third-text-color;
+}
+
+footer {
+  position: relative;
+
+  .bg {
+    width: 100%;
+    height: 200px;
+    background-image: url("../images/pattern-hills.svg");
+    background-size: 230% 100%;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+.social-icon {
+  padding-top: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 120px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.social-icon__item {
+  $icon-size: 28px;
+  width: $icon-size;
+  height: $icon-size;
+
+  img {
+    padding: 4px;
+    width: 100%;
+  }
+
+  &:hover {
+    outline: 2px dotted $second-text-color;
+    cursor: pointer;
+  }
+}
+
+.attribution {
+  margin-top: 30px;
+  width: 100%;
+  font-size: 11px;
+  color: $third-text-color;
+  text-align: center;
+}
+
+.attribution a {
+  color: $second-text-color;
+
+  &:hover {
+    color: darken($second-text-color,10%);
+  }
+}
+
+@media (min-width: 400px) {
+  .container {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+@media (min-width: 500px) {
+  .container {
+    padding-top: 100px;
+    width: 480px;
+  }
+
+  .date-container {
+    padding-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 400px;
+  }
+
+  .date__item {
+    padding: 12px 10px;
+    font-size: 3em;
+
+    &::after,
+    &::before {
+      $item-size: 10px;
+      width: $item-size;
+      height: $item-size;
+    }
+  }
+
+  footer {
+    padding-top: 80px;
+  }
+
+  .social-icon__item {
+    $icon-size: 33px;
+    width: $icon-size;
+    height: $icon-size;
+  }
+
+  .attribution {
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 768px) {
+  .date-container {
+    padding-top: 60px;
+    width: 500px;
+  }
+
+  .date__item {
+    padding: 18px 16px;
+    font-size: 3.5em;
+
+    $item-size: 14px;
+    &::after,
+    &::before {
+      width: $item-size;
+      height: $item-size;
+    }
+
+    &::before {
+      left: -($item-size / 2);
+    }
+
+    &::after {
+      right: -($item-size / 2);
+    }
+  }
+}
+
+
+@media (min-width: 900px) {
+  .container {
+    padding-top: 80px;
+    padding-bottom: 0;
+    width: 100%;
+  }
+
+  .date-container {
+    justify-content: space-evenly;
+    padding-top: 40px;
+    width: 600px;
+  }
+
+  .date__item {
+    padding: 20px 18px;
+    font-size: 4em;
+
+    $item-size: 16px;
+    &::after,
+    &::before {
+      width: $item-size;
+      height: $item-size;
+    }
+
+    &::before {
+      left: -($item-size / 2);
+    }
+
+    &::after {
+      right: -($item-size / 2);
+    }
+  }
+
+  .date__item-title {
+    font-size: .95em;
+  }
+
+  footer {
+    padding-top: 70px;
+  }
+}
