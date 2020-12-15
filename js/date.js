@@ -1,10 +1,19 @@
+/** Timer.js
+ * version: 1.0.2
+ * Author: Naif Sameer
+*/
 const el = (a) => document.querySelector(a);
+// select the els
 const SecondItem = el("#js-seconds-item");
 const MinutesItem = el("#js-minutes-item");
 const HoursItem = el("#js-hours-item");
 const DaysItem = el("#js-days-item");
-const time = new Date(2020, 12, 5);
 
+// get the time for timer function
+const today = new Date().getDate();
+const time = new Date(2020, 12, (today + 5));
+
+// the date used to countdown for the timer
 const getDate = () => new Date(time - new Date(Date.now()));
 
 const dateFormat = (date) => {
@@ -24,14 +33,15 @@ const dayFormat = (date) => {
   return date;
 };
 
-SecondItem.textContent = dateFormat(getDate().getSeconds());
-MinutesItem.textContent = dateFormat(getDate().getMinutes());
-HoursItem.textContent = dateFormat(getDate().getHours());
-DaysItem.textContent = dayFormat(getDate().getDay());
-
-setInterval(() => {
+const runTimer = () => {
   SecondItem.textContent = dateFormat(getDate().getSeconds());
   MinutesItem.textContent = dateFormat(getDate().getMinutes());
   HoursItem.textContent = dateFormat(getDate().getHours());
-  DaysItem.textContent = dayFormat(getDate().getDay());
+  DaysItem.textContent = dayFormat(getDate().getDate());
+};
+
+runTimer();
+
+setInterval(() => {
+  runTimer();
 }, 1000);

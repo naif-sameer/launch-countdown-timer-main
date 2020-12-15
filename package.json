@@ -1,10 +1,10 @@
 {
   "name": "launch-countdown-timer-main",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "1.0.2",
+  "main": "index.html",
   "scripts": {
     "sass": "node-sass -w css/sass/style.scss css/style.css --source-map true"
   },
-  "author": "naif <nayef7138@gmail.com>",
+  "author": "Naif Sameer",
   "license": "MIT"
 }
