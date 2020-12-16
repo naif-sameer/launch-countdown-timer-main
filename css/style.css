@@ -120,7 +120,7 @@ footer {
       width: 10px;
       height: 10px; }
   footer {
-    padding-top: 50px; }
+    padding-top: 20px; }
   .social-icon__item {
     width: 33px;
     height: 33px; }
@@ -162,8 +162,6 @@ footer {
     .date__item::after {
       right: -8px; }
   .date__item-title {
-    font-size: .95em; }
-  footer {
-    padding-top: 20px; } }
+    font-size: .95em; } }
 
 /*# sourceMappingURL=style.css.map */
